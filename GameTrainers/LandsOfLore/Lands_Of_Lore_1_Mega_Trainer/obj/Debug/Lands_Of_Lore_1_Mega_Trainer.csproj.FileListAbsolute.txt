@@ -1,0 +1,20 @@
+C:\Users\Jared\Documents\Visual Studio 2013\Projects\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\bin\Debug\Lands_Of_Lore_1_Mega_Trainer.exe.config
+C:\Users\Jared\Documents\Visual Studio 2013\Projects\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\bin\Debug\Lands_Of_Lore_1_Mega_Trainer.exe
+C:\Users\Jared\Documents\Visual Studio 2013\Projects\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\bin\Debug\Lands_Of_Lore_1_Mega_Trainer.pdb
+C:\Users\Jared\Documents\Visual Studio 2013\Projects\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\obj\Debug\Lands_Of_Lore_1_Mega_Trainer.LandsOfLoreMegaTrainer_Form.resources
+C:\Users\Jared\Documents\Visual Studio 2013\Projects\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\obj\Debug\Lands_Of_Lore_1_Mega_Trainer.Properties.Resources.resources
+C:\Users\Jared\Documents\Visual Studio 2013\Projects\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\obj\Debug\Lands_Of_Lore_1_Mega_Trainer.csproj.GenerateResource.Cache
+C:\Users\Jared\Documents\Visual Studio 2013\Projects\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\obj\Debug\Lands_Of_Lore_1_Mega_Trainer.exe
+C:\Users\Jared\Documents\Visual Studio 2013\Projects\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\obj\Debug\Lands_Of_Lore_1_Mega_Trainer.pdb
+C:\Users\Jared\Documents\Visual Studio 2013\Projects\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\obj\Debug\Lands_Of_Lore_1_Mega_Trainer.csprojResolveAssemblyReference.cache
+I:\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\bin\Debug\Lands_Of_Lore_1_Mega_Trainer.exe.config
+I:\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\obj\Debug\Lands_Of_Lore_1_Mega_Trainer.exe
+I:\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\obj\Debug\Lands_Of_Lore_1_Mega_Trainer.pdb
+C:\Users\Jared W. Fowler\Desktop\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\obj\Debug\Lands_Of_Lore_1_Mega_Trainer.LandsOfLoreMegaTrainer_Form.resources
+C:\Users\Jared W. Fowler\Desktop\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\obj\Debug\Lands_Of_Lore_1_Mega_Trainer.Properties.Resources.resources
+C:\Users\Jared W. Fowler\Desktop\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\obj\Debug\Lands_Of_Lore_1_Mega_Trainer.csproj.GenerateResource.Cache
+C:\Users\Jared W. Fowler\Desktop\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\bin\Debug\Lands_Of_Lore_1_Mega_Trainer.exe.config
+C:\Users\Jared W. Fowler\Desktop\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\bin\Debug\Lands_Of_Lore_1_Mega_Trainer.exe
+C:\Users\Jared W. Fowler\Desktop\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\bin\Debug\Lands_Of_Lore_1_Mega_Trainer.pdb
+C:\Users\Jared W. Fowler\Desktop\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\obj\Debug\Lands_Of_Lore_1_Mega_Trainer.exe
+C:\Users\Jared W. Fowler\Desktop\Lands_Of_Lore_1_Mega_Trainer\Lands_Of_Lore_1_Mega_Trainer\obj\Debug\Lands_Of_Lore_1_Mega_Trainer.pdb
