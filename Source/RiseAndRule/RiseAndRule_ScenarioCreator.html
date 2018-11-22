@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+
+<html lang="en" id="html"><head id="head">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="resources/css/materialize.min.css" media="screen,projection"/>
+
+    <!--Import Custom Styles.css-->
+    <!--<link type="text/css" rel="stylesheet" href="resources/css/styles.css">-->
+
+    <!--Import JQuery-->
+    <script src="resources/js/jquery-3.3.1.min.js"></script>
+
+    <!--Import materialize.js-->
+    <script src="resources/js/materialize.min.js"></script>
+
+    <style>
+
+    </style>
+
+    <title>
+        Rise & Rule - SC 1.0
+    </title>
+
+</head><body id="body"><header id="header">
+</header><main id="main">
+
+    <img id="mapImage" width="1440" height="880" src="resources/RiseAndRuleMap1_Grided.png" style="display:none">
+
+    <div id="contentContainer">
+        <div class="row">
+            <div class="col s12 m12" id="pageContent">
+
+                <br>
+
+                <p>
+                    <span style="font-size:200%; color:red;">Rise and Rule of Ancient Empires 1996</span><br>
+                    <span style="font-size:150%; color:red;">Scenario Creator - V0.01</span><br>
+                    <span style="font-size:100%; color:black;">By: JFowler - yrolg4tseuq@sbcglobal.net -  November 2018</span>
+                </p>
+
+                <br><br>
+
+                <div class="row">
+                    <div class="col s6 m8" id="mapContent">
+                        <div style="overflow:scroll;">
+
+                            <canvas id="mapCanvas" width="1440" height="880" style="border:1px solid #000000;">
+                            </canvas>
+
+                        </div>
+                    </div>
+                    <div class="col s6 m4" id="metaContent">
+
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <select id="metaPlayerCount">
+                                    <option value="4">4</option>
+                                    <option value="3">3</option>
+                                    <option value="2">2</option>
+                                </select>
+                                <label>Number of Players:</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <select>
+                                    <option value="yes">yes</option>
+                                    <option value="no">no</option>
+                                </select>
+                                <label>Enable Anarchy? (Barbarians):</label>
+                            </div>
+                        </div>
+
+                        <ul id="player_tabs" class="tabs tabs-fixed-width z-depth-1">
+                            <li class="tab"><a href="#tabPlayer1" class="active">1</a></li>
+                            <li class="tab"><a href="#tabPlayer2">2</a></li>
+                            <li class="tab"><a href="#tabPlayer3">3</a></li>
+                            <li class="tab"><a href="#tabPlayer4">4</a></li>
+                            <li class="tab"><a href="#tabPlayer5">Anarchy</a></li>
+                            <li class="tab"><a href="#tabNature">Nature</a></li>
+                        </ul>
+
+                        <div id="tabPlayer1" class="col s12">
+
+                            <br>
+                            <div style="background-color: red; height: 5px;"></div>
+                            <br>
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="tabPlayer1_name" type="text" maxlength="64">
+                                    <label for="tabPlayer1_name">Name:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectPlayerType">
+                                        <option value="1">Human</option>
+                                        <option value="2">Computer</option>
+                                    </select>
+                                    <label>Player Type:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectPlayerCivilization">
+                                        <option value="0">Greek</option>
+                                        <option value="1">Egyptian</option>
+                                        <option value="2">Indian</option>
+                                        <option value="3">Mesopotamian</option>
+                                        <option value="4">Chinese</option>
+                                        <option value="5">Celt</option>
+                                        <option value="6">Barbarian</option>
+                                    </select>
+                                    <label>Nation:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectMapExplored">
+                                        <option value="yes">yes</option>
+                                        <option value="no">no</option>
+                                    </select>
+                                    <label>Map Explored:</label>
+                                </div>
+                            </div>
+
+                            <p>Select object type and then click on map to place.</p>
+
+                            <ul id="player1_obj_tabs" class="tabs tabs-fixed-width z-depth-1">
+                                <li class="tab"><a href="#player1_obj_tab1" class="active">city</a></li>
+                                <li class="tab"><a href="#player1_obj_tab2">unit</a></li>
+                            </ul>
+                                
+                            <div id="player1_obj_tab1" class="col s12">
+                                Hello
+                            </div>
+                            <div id="player1_obj_tab2" class="col s12">
+                                Goodbye
+                            </div>
+
+                        </div>
+
+                        <div id="tabPlayer2" class="col s12">
+
+                            <br>
+                            <div style="background-color: blue; height: 5px;"></div>
+                            <br>
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="tabPlayer2_name" type="text" maxlength="64">
+                                    <label for="tabPlayer2_name">Name:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectPlayerType">
+                                        <option value="1">Human</option>
+                                        <option value="2">Computer</option>
+                                    </select>
+                                    <label>Player Type:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectPlayerCivilization">
+                                        <option value="0">Greek</option>
+                                        <option value="1">Egyptian</option>
+                                        <option value="2">Indian</option>
+                                        <option value="3">Mesopotamian</option>
+                                        <option value="4">Chinese</option>
+                                        <option value="5">Celt</option>
+                                        <option value="6">Barbarian</option>
+                                    </select>
+                                    <label>Nation:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectMapExplored">
+                                        <option value="yes">yes</option>
+                                        <option value="no">no</option>
+                                    </select>
+                                    <label>Map Explored:</label>
+                                </div>
+                            </div>
+
+                            <p>Select object type and then click on map to place.</p>
+
+                            <ul id="player2_obj_tabs" class="tabs tabs-fixed-width z-depth-1">
+                                <li class="tab"><a href="#player2_obj_tab1" class="active">city</a></li>
+                                <li class="tab"><a href="#player2_obj_tab2">unit</a></li>
+                            </ul>
+                                
+                            <div id="player2_obj_tab1" class="col s12">
+                                Hello
+                            </div>
+                            <div id="player2_obj_tab2" class="col s12">
+                                Goodbye
+                            </div>
+
+                        </div>
+
+                        <div id="tabPlayer3" class="col s12">
+
+                            <br>
+                            <div style="background-color: yellow; height: 5px;"></div>
+                            <br>
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="tabPlayer3_name" type="text" maxlength="64">
+                                    <label for="tabPlayer3_name">Name:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectPlayerType">
+                                        <option value="1">Human</option>
+                                        <option value="2">Computer</option>
+                                    </select>
+                                    <label>Player Type:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectPlayerCivilization">
+                                        <option value="0">Greek</option>
+                                        <option value="1">Egyptian</option>
+                                        <option value="2">Indian</option>
+                                        <option value="3">Mesopotamian</option>
+                                        <option value="4">Chinese</option>
+                                        <option value="5">Celt</option>
+                                        <option value="6">Barbarian</option>
+                                    </select>
+                                    <label>Nation:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectMapExplored">
+                                        <option value="yes">yes</option>
+                                        <option value="no">no</option>
+                                    </select>
+                                    <label>Map Explored:</label>
+                                </div>
+                            </div>
+
+                            <p>Select object type and then click on map to place.</p>
+
+                            <ul id="player3_obj_tabs" class="tabs tabs-fixed-width z-depth-1">
+                                <li class="tab"><a href="#player3_obj_tab1" class="active">city</a></li>
+                                <li class="tab"><a href="#player3_obj_tab2">unit</a></li>
+                            </ul>
+                                
+                            <div id="player3_obj_tab1" class="col s12">
+                                Hello
+                            </div>
+                            <div id="player3_obj_tab2" class="col s12">
+                                Goodbye
+                            </div>
+
+                        </div>
+
+                        <div id="tabPlayer4" class="col s12">
+
+                            <br>
+                            <div style="background-color: orange; height: 5px;"></div>
+                            <br>
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="tabPlayer4_name" type="text" maxlength="64">
+                                    <label for="tabPlayer4_name">Name:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectPlayerType">
+                                        <option value="1">Human</option>
+                                        <option value="2">Computer</option>
+                                    </select>
+                                    <label>Player Type:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectPlayerCivilization">
+                                        <option value="0">Greek</option>
+                                        <option value="1">Egyptian</option>
+                                        <option value="2">Indian</option>
+                                        <option value="3">Mesopotamian</option>
+                                        <option value="4">Chinese</option>
+                                        <option value="5">Celt</option>
+                                        <option value="6">Barbarian</option>
+                                    </select>
+                                    <label>Nation:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectMapExplored">
+                                        <option value="yes">yes</option>
+                                        <option value="no">no</option>
+                                    </select>
+                                    <label>Map Explored:</label>
+                                </div>
+                            </div>
+
+                            <p>Select object type and then click on map to place.</p>
+
+                            <ul id="player4_obj_tabs" class="tabs tabs-fixed-width z-depth-1">
+                                <li class="tab"><a href="#player4_obj_tab1" class="active">city</a></li>
+                                <li class="tab"><a href="#player4_obj_tab2">unit</a></li>
+                            </ul>
+                                
+                            <div id="player4_obj_tab1" class="col s12">
+                                Hello
+                            </div>
+                            <div id="player4_obj_tab2" class="col s12">
+                                Goodbye
+                            </div>
+
+                        </div>
+
+                        <div id="tabPlayer5" class="col s12">
+
+                            <br>
+                            <div style="background-color: black; height: 5px;"></div>
+                            <br>
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input id="tabPlayer5_name" type="text" maxlength="64">
+                                    <label for="tabPlayer5_name">Name:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectPlayerType">
+                                        <option value="3">Anarchy</option>
+                                    </select>
+                                    <label>Player Type:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectPlayerCivilization">
+                                        <option value="6">Barbarian</option>
+                                    </select>
+                                    <label>Nation:</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select class="selectMapExplored">
+                                        <option value="yes">yes</option>
+                                        <option value="no">no</option>
+                                    </select>
+                                    <label>Map Explored:</label>
+                                </div>
+                            </div>
+
+                            <p>Select object type and then click on map to place.</p>
+
+                            <ul id="player5_obj_tabs" class="tabs tabs-fixed-width z-depth-1">
+                                <li class="tab"><a href="#player5_obj_tab1" class="active">city</a></li>
+                                <li class="tab"><a href="#player5_obj_tab2">unit</a></li>
+                            </ul>
+                                
+                            <div id="player5_obj_tab1" class="col s12">
+                                Hello
+                            </div>
+                            <div id="player5_obj_tab2" class="col s12">
+                                Goodbye
+                            </div>
+
+                        </div>
+
+                        <div id="tabNature" class="col s12">
+
+                            <div class="row">
+
+                                <p>Select object type and then click on map to place.</p>
+
+                                <ul id="nature_obj_tabs" class="tabs tabs-fixed-width z-depth-1">
+                                    <li class="tab"><a href="#nature_obj_tab1" class="active">road</a></li>
+                                    <li class="tab"><a href="#nature_obj_tab2">farm</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main><footer id="footer">
+
+</footer>
+
+<script>
+
+var BLOCK_SIDE_PIXEL_COUNT = 10;
+var MAP_WIDTH_IN_BLOCKS = 144;
+var MAP_HEIGHT_IN_BLOCKS = 88;
+
+var road_objects = [];
+var farm_objects = [];
+var city_unit_objects = [];
+
+var city_modal_meta = {};
+var unit_modal_meta = {};
+
+var canvas = document.getElementById("mapCanvas");
+var ctx = canvas.getContext("2d");
+var mapID = document.getElementById("mapImage");
+
+// Use JS onload instead of JQuery to ensure all content is loaded before attempting to
+// use the various components. 
+
+window.onload = function() 
+{
+    // Initialize Canvas
+
+    renderCanvasImage();
+
+    // Initialize tabs
+
+    $('.tabs').tabs();
+
+    // Initialize selects
+
+    $('select').formSelect();
+
+    // Register map click handler
+
+    $('#mapCanvas').click(function (e)
+    {
+        mapCanvasClickHandler(e.offsetX, e.offsetY);
+    });
+}
+
+function renderCanvasImage()
+{
+    // Draw map image
+
+    ctx.drawImage(mapID, 0, 0);
+
+    // Draw cities and units
+
+
+    // Draw farms
+
+
+    // Draw roads
+
+
+
+}
+
+function indexOfObject(objArray, objMeta)
+{
+    var index = -1;
+
+    for (var i = 0; i < objArray.length; i++)
+    {
+        if (objArray[i].coords.xy == objMeta.coords.xy)
+        {
+            index = i;
+            break;
+        }
+    }
+
+    return index;
+}
+
+function convertOffsetsToCoords(x, y)
+{
+    var coords = {
+        x:0,        // X block number (not pixel)
+        y:0,        // Y block number (not pixel)
+        xy:0,       // Absolute block number
+        cornerX:0,  // X Pixel location of top-left corner
+        cornerY:0   // Y Pixel location of top-left corner
+    };
+
+    coords.x = parseInt(x / 10);
+    coords.y = parseInt(y / 10);
+
+    coords.xy = (coords.y * MAP_WIDTH_IN_BLOCKS) + coords.x;
+
+    coords.cornerX = coords.x * BLOCK_SIDE_PIXEL_COUNT;
+    coords.cornerY = coords.y * BLOCK_SIDE_PIXEL_COUNT;
+
+    return coords;
+}
+
+function mapCanvasClickHandler(x, y)
+{
+    var objMeta = {coords:{}, player:"", objType:""};
+
+    objMeta.coords = convertOffsetsToCoords(parseInt(x), parseInt(y));
+    objMeta.player = $("#player_tabs .active").html();
+
+    // Get Object Type
+
+    if ("Nature" == objMeta.player)
+    {
+        objMeta.objType = $("#nature_obj_tabs .active").html();
+    }
+    else
+    {
+        objMeta.objType = $("#player" + objMeta.player + "_obj_tabs .active").html();
+    }
+
+    // Depending upon object type, if the block is already taken, erase
+    // the current block object, else, add new object. Roads and farms
+    // can be stacked on each other and on cities and units. 
+
+    var objArrayPtr = null;
+
+    if ("road" == objMeta.objType)
+    {
+        objArrayPtr = road_objects;
+    }
+    else if ("farm" == objMeta.objType)
+    {
+        objArrayPtr = farm_objects;
+    } 
+    else
+    {
+        objArrayPtr = city_unit_objects;
+    }
+
+    var index = indexOfObject(objArrayPtr, objMeta);
+
+    if (-1 == index)
+    {
+        objArrayPtr.push(objMeta);
+    }
+    else
+    {
+        objArrayPtr.splice(index, 1);
+    }
+
+    console.log(road_objects);
+    console.log(farm_objects);
+    console.log(city_unit_objects);
+
+
+
+    
+}
+
+</script>
+
+</body></html>

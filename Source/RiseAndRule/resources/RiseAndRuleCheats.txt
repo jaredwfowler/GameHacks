@@ -1,0 +1,230 @@
+Rise and Rule Cheats
+
+
+Very simple key-value arangement.
+
+
+
+Players
+Player=<ID>,<Name>,<BuildingType>,<PlayerType>,<UnitType>
+PlayerType: 1=Human, 2=Computer, 3=Barbarians
+Build/Unit Type: 0=Greek, 1=Egypt, 2=Indian, 3=Messo, 4=Chineese, 5=Celt, 6=Barbarian
+Player=0,"Homer",4,1,4
+
+
+Player Has Lost - 1 indicates yes, 0 no. Each corresponds to player id. 
+In this example, players 1 and 2 have lost. Players 0, 3, 4 are still in.
+lost=0,1,1,0,0
+
+
+City Location and owner
+[City2@11166]
+The 2 represents team number.
+The 11166 represents position on map. This is a large map, so ....
+
+
+City Size Graphics
+The numerical value represents size 3 which is the largest.
+city="Hathor",3
+
+
+
+
+Knowledge - Max
+Each value represents one of the knowledge score areas
+know=1000000,1000000,1000000,1000000,1000000
+
+
+Buildings - Max
+There are 10 buildings. Each 2 number set represents the level and culture of building. (3 = level 3) The culture is tied to the player ID. You can only select and ID for which there is a player. Selecting a non-player number will result in an error.
+building=31313131313131313131
+
+
+Spotted
+<Row>=fffffff......
+Do all f's for every row to have full explore.
+The number of rows and f's for each map size are as follows:
+
+LARGE:
+00=ffffffffffffffffffffffffffffffffffff
+.
+.
+87=ffffffffffffffffffffffffffffffffffff
+
+MEDIUM:
+00=fffffffffffffffffffffffffff
+.
+.
+65=fffffffffffffffffffffffffff
+
+SMALL:
+00=ffffffffffffffffff
+.
+.
+43=ffffffffffffffffff
+
+
+
+
+Army - Max of 27 units per group
+11506=42O942O942O942O942O942O942O942O942O942O942O942O942O942O9d2O7d2O7d2O5d2O5d2O542O942O942O942O942O942O942O942O9.....,99,99,0
+11506: Location
+4209: Heavy Horse
+d207: Jungle Raider
+6206: Heavy Missle
+c30c: Desert Raider
+
+
+99: Health
+99: Morale
+0: 
+
+
+
+
+
+
+
+
+
+
+
+
+00=ffffffffffffffffffffffffffffffffffff
+01=ffffffffffffffffffffffffffffffffffff
+02=ffffffffffffffffffffffffffffffffffff
+03=ffffffffffffffffffffffffffffffffffff
+04=ffffffffffffffffffffffffffffffffffff
+05=ffffffffffffffffffffffffffffffffffff
+06=ffffffffffffffffffffffffffffffffffff
+07=ffffffffffffffffffffffffffffffffffff
+08=ffffffffffffffffffffffffffffffffffff
+09=ffffffffffffffffffffffffffffffffffff
+10=ffffffffffffffffffffffffffffffffffff
+11=ffffffffffffffffffffffffffffffffffff
+12=ffffffffffffffffffffffffffffffffffff
+13=ffffffffffffffffffffffffffffffffffff
+14=ffffffffffffffffffffffffffffffffffff
+15=ffffffffffffffffffffffffffffffffffff
+16=ffffffffffffffffffffffffffffffffffff
+17=ffffffffffffffffffffffffffffffffffff
+18=ffffffffffffffffffffffffffffffffffff
+19=ffffffffffffffffffffffffffffffffffff
+20=ffffffffffffffffffffffffffffffffffff
+21=ffffffffffffffffffffffffffffffffffff
+22=ffffffffffffffffffffffffffffffffffff
+23=ffffffffffffffffffffffffffffffffffff
+24=ffffffffffffffffffffffffffffffffffff
+25=ffffffffffffffffffffffffffffffffffff
+26=ffffffffffffffffffffffffffffffffffff
+27=ffffffffffffffffffffffffffffffffffff
+28=ffffffffffffffffffffffffffffffffffff
+29=ffffffffffffffffffffffffffffffffffff
+30=ffffffffffffffffffffffffffffffffffff
+31=ffffffffffffffffffffffffffffffffffff
+32=ffffffffffffffffffffffffffffffffffff
+33=ffffffffffffffffffffffffffffffffffff
+34=ffffffffffffffffffffffffffffffffffff
+35=ffffffffffffffffffffffffffffffffffff
+36=ffffffffffffffffffffffffffffffffffff
+37=ffffffffffffffffffffffffffffffffffff
+38=ffffffffffffffffffffffffffffffffffff
+39=ffffffffffffffffffffffffffffffffffff
+40=ffffffffffffffffffffffffffffffffffff
+41=ffffffffffffffffffffffffffffffffffff
+42=ffffffffffffffffffffffffffffffffffff
+43=ffffffffffffffffffffffffffffffffffff
+44=ffffffffffffffffffffffffffffffffffff
+45=ffffffffffffffffffffffffffffffffffff
+46=ffffffffffffffffffffffffffffffffffff
+47=ffffffffffffffffffffffffffffffffffff
+48=ffffffffffffffffffffffffffffffffffff
+49=ffffffffffffffffffffffffffffffffffff
+50=ffffffffffffffffffffffffffffffffffff
+51=ffffffffffffffffffffffffffffffffffff
+52=ffffffffffffffffffffffffffffffffffff
+53=ffffffffffffffffffffffffffffffffffff
+54=ffffffffffffffffffffffffffffffffffff
+55=ffffffffffffffffffffffffffffffffffff
+56=ffffffffffffffffffffffffffffffffffff
+57=ffffffffffffffffffffffffffffffffffff
+58=ffffffffffffffffffffffffffffffffffff
+59=ffffffffffffffffffffffffffffffffffff
+60=ffffffffffffffffffffffffffffffffffff
+61=ffffffffffffffffffffffffffffffffffff
+62=ffffffffffffffffffffffffffffffffffff
+63=ffffffffffffffffffffffffffffffffffff
+64=ffffffffffffffffffffffffffffffffffff
+65=ffffffffffffffffffffffffffffffffffff
+66=ffffffffffffffffffffffffffffffffffff
+67=ffffffffffffffffffffffffffffffffffff
+68=ffffffffffffffffffffffffffffffffffff
+69=ffffffffffffffffffffffffffffffffffff
+70=ffffffffffffffffffffffffffffffffffff
+71=ffffffffffffffffffffffffffffffffffff
+72=ffffffffffffffffffffffffffffffffffff
+73=ffffffffffffffffffffffffffffffffffff
+74=ffffffffffffffffffffffffffffffffffff
+75=ffffffffffffffffffffffffffffffffffff
+76=ffffffffffffffffffffffffffffffffffff
+77=ffffffffffffffffffffffffffffffffffff
+78=ffffffffffffffffffffffffffffffffffff
+79=ffffffffffffffffffffffffffffffffffff
+80=ffffffffffffffffffffffffffffffffffff
+81=ffffffffffffffffffffffffffffffffffff
+82=ffffffffffffffffffffffffffffffffffff
+83=ffffffffffffffffffffffffffffffffffff
+84=ffffffffffffffffffffffffffffffffffff
+85=ffffffffffffffffffffffffffffffffffff
+86=ffffffffffffffffffffffffffffffffffff
+87=ffffffffffffffffffffffffffffffffffff
+
+
+00=ffffffffffffffffff
+01=ffffffffffffffffff
+02=ffffffffffffffffff
+03=ffffffffffffffffff
+04=ffffffffffffffffff
+05=ffffffffffffffffff
+06=ffffffffffffffffff
+07=ffffffffffffffffff
+08=ffffffffffffffffff
+09=ffffffffffffffffff
+10=ffffffffffffffffff
+11=ffffffffffffffffff
+12=ffffffffffffffffff
+13=ffffffffffffffffff
+14=ffffffffffffffffff
+15=ffffffffffffffffff
+16=ffffffffffffffffff
+17=ffffffffffffffffff
+18=ffffffffffffffffff
+19=ffffffffffffffffff
+20=ffffffffffffffffff
+21=ffffffffffffffffff
+22=ffffffffffffffffff
+23=ffffffffffffffffff
+24=ffffffffffffffffff
+25=ffffffffffffffffff
+26=ffffffffffffffffff
+27=ffffffffffffffffff
+28=ffffffffffffffffff
+29=ffffffffffffffffff
+30=ffffffffffffffffff
+31=ffffffffffffffffff
+32=ffffffffffffffffff
+33=ffffffffffffffffff
+34=ffffffffffffffffff
+35=ffffffffffffffffff
+36=ffffffffffffffffff
+37=ffffffffffffffffff
+38=ffffffffffffffffff
+39=ffffffffffffffffff
+40=ffffffffffffffffff
+41=ffffffffffffffffff
+42=ffffffffffffffffff
+43=ffffffffffffffffff
+44=ffffffffffffffffff
+45=ffffffffffffffffff
+46=ffffffffffffffffff
+47=ffffffffffffffffff
