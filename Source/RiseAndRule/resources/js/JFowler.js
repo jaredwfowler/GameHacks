@@ -33,6 +33,10 @@ window.onload = function()
 
     $('select').formSelect();
 
+    // Initialize modal
+
+    $('.modal').modal();
+
     // Register map click handler
 
     $('#mapCanvas').click( function (e)
@@ -309,8 +313,6 @@ function getObjectColor(playerID)
 {
     var color = {};
 
-    console.log(playerID);
-
     switch (playerID)
     {
         case 1:
@@ -477,16 +479,14 @@ function mapCanvasClickHandler(x, y)
     }
 
     renderCanvasImage();
-
-    console.log(road_objects);
-    console.log(farm_objects);
-    console.log(city_unit_objects);
 }
 
 function createButtonClickHandler()
 {
     var playerCount = $(".metaPlayerCount").val().trim();
     var anarchyEnabled = $(".metaAnarchyEnabled").val().trim();
+
+    console.log(anarchyEnabled);
 
     var playerInfo = [ {}, {}, {}, {}, {} ];
 
@@ -543,7 +543,7 @@ function createButtonClickHandler()
         'lost=0,0,' + 
         ((3 <= playerCount) ? '0' : '1') + ',' + 
         ((4 <= playerCount) ? '0' : '1') + ',' + 
-        ((anarchyEnabled) ? '0' : '1') + '\r\n';
+        (("true" == anarchyEnabled) ? '0' : '1') + '\r\n';
 
     for (var i = 0; i < 5; i++)
     {
@@ -598,11 +598,32 @@ function createButtonClickHandler()
         tempStr[(player - 1)] += 
             '[City' + (player - 1) + '@' + objPtr.coords.xy + ']\r\n' + 
             'city="' + objPtr.city.name + '",' + ((objPtr.city.developed) ? '3' : '1') + '\r\n' +
-            'pop=' + ((objPtr.city.developed) ? '10000' : '100') + ',0,0,z1a3,aaaaa,OO000\r\n' +
+            'pop=' + ((objPtr.city.developed) ? '2000' : '300') + ',0,0,z1a3,aaaaa,OO000\r\n' +
             'know=' + ((objPtr.city.knowledge) ? '1000000,1000000,1000000,1000000,1000000' : '0,0,0,0,0') + '\r\n' +
-            'prod=0,169,226\r\n' + 
-            'building=\r\n' +
-            'trade=pppp,0,M00\r\n' + 
+            'prod=0,0,0\r\n' + 
+            'building=' + 
+
+            ((objPtr.city.developed) ? '3' : '1') + (player - 1) + // TownHall
+            ((objPtr.city.developed) ? '3' : '0') + (player - 1) + // Workshop
+            ((objPtr.city.developed) ? '3' : '0') + (player - 1) + // Market
+            ((objPtr.city.developed) ? '3' : '1') + (player - 1) + // Academy
+            ((objPtr.city.developed) ? '3' : '0') + (player - 1) + // Temple
+            ((objPtr.city.developed) ? '3' : '0') + (player - 1) + // Library
+            ((objPtr.city.developed) ? '3' : '0') + (player - 1) + // Barracks
+            ((objPtr.city.developed) ? '3' : '0') + (player - 1) + // Warehouse
+            ((objPtr.city.developed) ? '3' : '0') + (player - 1) + // Blacksmith
+            ((objPtr.city.developed) ? '3' : '0') + (player - 1) + // Wall
+
+            '\r\n' +
+            'trade=pppp,0,' +
+
+            (('1' == player) ? 'B0000' : '') +
+            (('2' == player) ? '0B000' : '') +
+            (('3' == player) ? '00B00' : '') +
+            (('4' == player) ? '000B0' : '') +
+            (('5' == player) ? '0000B' : '') +
+
+            '\r\n' + 
             'goods=0,0,0,0,0,0,0,0,0\r\n' + 
             'orders=0,0,0\r\n';
     }
@@ -630,11 +651,27 @@ function createButtonClickHandler()
     for (var i = 0; i < 5; i++)
     {
         fileStr += '[Diplomacy' + i + ']\r\n';
+
+        for (var j = 0; j < 5; j++)
+        {
+            if (i != j)
+            {
+                fileStr += 'dip=' + j + ',51,51,0,0\r\n';
+            }
+        }
     }
 
     for (var i = 0; i < 5; i++)
     {
         fileStr += '[CombatStats' + i + ']\r\n';
+
+        for (var j = 0; j < 5; j++)
+        {
+            if (i != j)
+            {
+                fileStr += 'stats=' + j + ',0,0,0,0,0,0,0,0,0,0\r\n';
+            }
+        }
     }
 
     for (var i = 0; i < 5; i++)
@@ -693,4 +730,9 @@ function createButtonClickHandler()
         '[End]\r\n';
 
     console.log(fileStr);
+
+    var base64Str = window.btoa(fileStr);
+
+    $("#downloadModal .modal-content").html('All Done!<br>Get file here:<br><a href="data:application/octet-stream;charset=utf-16le;base64,' + base64Str + '">RiseAndRule.sav</a>');
+    $('#downloadModal').modal('open'); 
 }
