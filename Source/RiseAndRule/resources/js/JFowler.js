@@ -1,3 +1,5 @@
+// Created by: JFowler
+// November 2018
 
 var BLOCK_SIDE_PIXEL_COUNT = 20;
 var MAP_WIDTH_IN_BLOCKS = 144;
@@ -6,7 +8,9 @@ var GRID_BORDER_PIXEL_COUNT = (BLOCK_SIDE_PIXEL_COUNT / 10);
 
 var road_objects = [];
 var farm_objects = [];
-var city_unit_objects = [];
+var city_objects = [];
+var unit_objects = [];
+var wonder_objects = [];
 
 var canvas = document.getElementById("mapCanvas");
 var ctx = canvas.getContext("2d");
@@ -213,7 +217,42 @@ function generateMetaContent(parentID)
             </div>                                                  \
         </div>                                                      \
         <div id="tabUnit_' + time + '">                             \
-            Not Implemented                                         \
+            <br>                                                    \
+            <div class="row">                                       \
+                <div class="input-field col s6">                    \
+                    <select class="unitType">                       \
+                    <option value="500a">Light Missle</option>      \
+                    <option value="6006">Heavy Missle</option>      \
+                    <option value="000a">Light Infantry</option>    \
+                    <option value="10O8">Medium Infantry</option>   \
+                    <option value="21O6">Heavy Infantry</option>    \
+                    <option value="30Oe">Light Calvary</option>     \
+                    <option value="40OC">Heavy Calvary</option>     \
+                    <option value="d207">Jungle Raider</option>     \
+                    <option value="c30c">Desert Raider</option>     \
+                    <option value="70Og">Light Ship</option>        \
+                    <option value="81Ok">Heavy Ship</option>        \
+                    <option value="91Oa">Philosopher</option>       \
+                    <option value="b0Oa">Merchant</option>          \
+                    <option value="a0Oa">Settler</option>           \
+                    </select>                                       \
+                    <label>Unit Type:</label>                       \
+                </div>                                              \
+                <div class="input-field col s6">                    \
+                    <select class="unitCount">                      \
+                    <option value="1">1</option>                    \
+                    <option value="2">2</option>                    \
+                    <option value="3">3</option>                    \
+                    <option value="4">4</option>                    \
+                    <option value="5">5</option>                    \
+                    <option value="10">10</option>                  \
+                    <option value="20">20</option>                  \
+                    <option value="25">25</option>                  \
+                    <option value="27">27</option>                  \
+                    </select>                                       \
+                    <label>Unit Count:</label>                      \
+                </div>                                              \
+            </div>                                                  \
         </div>                                                      \
         ';
 
@@ -232,12 +271,38 @@ function generateMetaContent(parentID)
                                                                     \
         <ul class="tabs tabs-fixed-width z-depth-1 obj-tabs">       \
             <li class="tab">                                        \
-                <a href="#tabRoad" class="active">road</a>          \
+                <a href="#tabRoad_' + time + '" class="active">     \
+                    road                                            \
+                </a>                                                \
             </li>                                                   \
             <li class="tab">                                        \
-                <a href="#tabFarm">farm</a>                         \
+                <a href="#tabFarm_' + time + '">                    \
+                    farm                                            \
+                </a>                                                \
+            </li>                                                   \
+            <li class="tab">                                        \
+                <a href="#tabWonder_' + time + '">                  \
+                    wonder                                          \
+                </a>                                                \
             </li>                                                   \
         </ul>                                                       \
+        <br>                                                        \
+        <div id="tabWonder_' + time + '">                           \
+            <br>                                                    \
+            <div class="row">                                       \
+                <div class="input-field col s6">                    \
+                    <select class="wonderCivilization">             \
+                    <option value="0">Greek</option>                \
+                    <option value="1">Egyptian</option>             \
+                    <option value="2">Indian</option>               \
+                    <option value="3">Mesopotamian</option>         \
+                    <option value="4">Chinese</option>              \
+                    <option value="5">Celt</option>                 \
+                    </select>                                       \
+                    <label>Civilization:</label>                    \
+                </div>                                              \
+            </div>                                                  \
+        </div>                                                      \
     </div>                                                          \
     ';
 
@@ -252,21 +317,30 @@ function renderCanvasImage()
 
     ctx.drawImage(mapID, 0, 0);
 
-    // Draw cities and units - Square in middle
+    // Draw cities - Square in middle
 
-    for (var i = 0; i < city_unit_objects.length; i++)
+    for (var i = 0; i < city_objects.length; i++)
     {
-        coords = city_unit_objects[i].coords;
+        coords = city_objects[i].coords;
+        ctx.fillStyle = getObjectColor(city_objects[i].player).city;
+        ctx.fillRect(coords.cornerX + GRID_BORDER_PIXEL_COUNT + 4, coords.cornerY + GRID_BORDER_PIXEL_COUNT + 4, 10, 10);
+    }
 
-        if ("city" == city_unit_objects[i].objType)
-        {
-            ctx.fillStyle = getObjectColor(city_unit_objects[i].player).city;
-        }
-        else if ("unit" == city_unit_objects[i].objType)
-        {   
-            ctx.fillStyle = getObjectColor(city_unit_objects[i].player).unit;
-        }
+    // Draw units - Square in middle - Little smaller than cities
 
+    for (var i = 0; i < unit_objects.length; i++)
+    {
+        coords = unit_objects[i].coords;
+        ctx.fillStyle = getObjectColor(unit_objects[i].player).unit;
+        ctx.fillRect(coords.cornerX + GRID_BORDER_PIXEL_COUNT + 5, coords.cornerY + GRID_BORDER_PIXEL_COUNT + 5, 8, 8);
+    }
+
+    // Draw wonders - Square in middle
+
+    for (var i = 0; i < wonder_objects.length; i++)
+    {
+        coords = wonder_objects[i].coords;
+        ctx.fillStyle = getObjectColor(wonder_objects[i].player).wonder;
         ctx.fillRect(coords.cornerX + GRID_BORDER_PIXEL_COUNT + 4, coords.cornerY + GRID_BORDER_PIXEL_COUNT + 4, 10, 10);
     }
 
@@ -351,6 +425,7 @@ function getObjectColor(playerID)
         case 'Nature':
             color.road = "#6E2C00";
             color.farm = "#B7950B";
+            color.wonder = "#6E2C00";
             break;
 
         default:
@@ -387,8 +462,24 @@ function getUnitInfo(playerNum)
 {
     var unitInfo = {};
 
+    // Unit type
+
+    unitInfo.type = $("#tabPlayer" + playerNum + " .unitType").val().trim();
+
+    // Unit count
+
+    unitInfo.count = $("#tabPlayer" + playerNum + " .unitCount").val().trim();
 
     return unitInfo;
+}
+
+function getWonderInfo()
+{
+    var wonderInfo = {};
+
+    wonderInfo.civilization = $("#tabNature .wonderCivilization").val().trim();
+
+    return wonderInfo;
 }
 
 function convertOffsetsToCoords(x, y)
@@ -442,6 +533,7 @@ function mapCanvasClickHandler(x, y)
     // can be stacked on each other and on cities and units. 
 
     var objArrayPtr = null;
+    var index = -1;
 
     if ("road" == objMeta.objType)
     {
@@ -451,14 +543,19 @@ function mapCanvasClickHandler(x, y)
     {
         objArrayPtr = farm_objects;
     } 
+    else if ("wonder" == objMeta.objType)
+    {
+        objArrayPtr = wonder_objects;
+        objMeta.wonder = getWonderInfo();
+    } 
     else if ("unit" == objMeta.objType)
     {
-        objArrayPtr = city_unit_objects;
+        objArrayPtr = unit_objects;
         objMeta.unit = getUnitInfo(objMeta.player);
     }
     else if ("city" == objMeta.objType)
     {
-        objArrayPtr = city_unit_objects;
+        objArrayPtr = city_objects;
         objMeta.city = getCityInfo(objMeta.player);
     }
     else
@@ -549,35 +646,125 @@ function createButtonClickHandler()
     {
         fileStr += '[Army' + i + ']\r\n';
 
-        // TODO
+        for (var j = 0; j < unit_objects.length; j++)
+        {
+            var objPtr = unit_objects[j];
+            var player = objPtr.player;
+
+            if (!(parseInt(player) == (i + 1)) || 
+                !(("500a" == objPtr.unit.type) || // Light Missle
+                  ("6006" == objPtr.unit.type) || // Heavy Missle
+                  ("000a" == objPtr.unit.type) || // Light Infantry
+                  ("10O8" == objPtr.unit.type) || // Medium Infantry
+                  ("21O6" == objPtr.unit.type) || // Heavy Infantry
+                  ("30Oe" == objPtr.unit.type) || // Light Calvary
+                  ("40OC" == objPtr.unit.type) || // Heavy Calvary
+                  ("d207" == objPtr.unit.type) || // Jungle Raider
+                  ("c30c" == objPtr.unit.type))) // Desert Raider
+            {
+                continue;
+            }
+
+            fileStr += objPtr.coords.xy + '=';
+
+            for (var k = 0; k < objPtr.unit.count; k++)
+            {
+                fileStr += objPtr.unit.type;
+            }
+
+            fileStr += ',100,100,0\r\n';
+        }
     }
 
     for (var i = 0; i < 5; i++)
     {
         fileStr += '[Philosopher' + i + ']\r\n';
 
-        // TODO
+        for (var j = 0; j < unit_objects.length; j++)
+        {
+            var objPtr = unit_objects[j];
+            var player = objPtr.player;
+
+            if (!(parseInt(player) == (i + 1)) || 
+                !(("91Oa" == objPtr.unit.type))) // Philosopher
+            {
+                continue;
+            }
+
+            for (var k = 0; k < objPtr.unit.count; k++)
+            {
+                fileStr += objPtr.coords.xy + '=' + objPtr.unit.type +
+                           ',1000000,1000000,1000000,1000000,1000000,"test phil"\r\n';
+            }
+        }
     }   
 
     for (var i = 0; i < 5; i++)
     {
         fileStr += '[Settler' + i + ']\r\n';
 
-        // TODO
+        for (var j = 0; j < unit_objects.length; j++)
+        {
+            var objPtr = unit_objects[j];
+            var player = objPtr.player;
+
+            if (!(parseInt(player) == (i + 1)) || 
+                !(("b0Oa" == objPtr.unit.type))) // Settler
+            {
+                continue;
+            }
+
+            for (var k = 0; k < objPtr.unit.count; k++)
+            {
+                fileStr += objPtr.coords.xy + '=' + objPtr.unit.type +
+                           ',1000000,1000000,1000000,1000000,1000000\r\n';
+            }
+        }
     }   
 
     for (var i = 0; i < 5; i++)
     {
         fileStr += '[Merchant' + i + ']\r\n';
 
-        // TODO
+        for (var j = 0; j < unit_objects.length; j++)
+        {
+            var objPtr = unit_objects[j];
+            var player = objPtr.player;
+
+            if (!(parseInt(player) == (i + 1)) || 
+                !(("a0Oa" == objPtr.unit.type))) // Philosopher
+            {
+                continue;
+            }
+
+            for (var k = 0; k < objPtr.unit.count; k++)
+            {
+                fileStr += objPtr.coords.xy + '=' + objPtr.unit.type + ',1,1\r\n';
+            }
+        }
     }   
 
     for (var i = 0; i < 5; i++)
     {
         fileStr += '[Ship' + i + ']\r\n';
 
-        // TODO
+        for (var j = 0; j < unit_objects.length; j++)
+        {
+            var objPtr = unit_objects[j];
+            var player = objPtr.player;
+
+            if (!(parseInt(player) == (i + 1)) || 
+                !(("70Og" == objPtr.unit.type) || // Ligh Ship
+                  ("81Ok" == objPtr.unit.type)))  // Heavy Ship
+            {
+                continue;
+            }
+
+            for (var k = 0; k < objPtr.unit.count; k++)
+            {
+                fileStr += objPtr.coords.xy + '=' + objPtr.unit.type + ',"test ship"\r\n';
+            }
+        }
     }   
 
     for (var i = 0; i < 5; i++)
@@ -585,15 +772,10 @@ function createButtonClickHandler()
         fileStr += '[Orders' + i + ']\r\n';
     }
 
-    for (var i = 0; i < city_unit_objects.length; i++)
+    for (var i = 0; i < city_objects.length; i++)
     {
-        var objPtr = city_unit_objects[i];
+        var objPtr = city_objects[i];
         var player = objPtr.player;
-
-        if ("unit" == objPtr.objType)
-        {
-            continue;
-        }
 
         tempStr[(player - 1)] += 
             '[City' + (player - 1) + '@' + objPtr.coords.xy + ']\r\n' + 
@@ -725,11 +907,16 @@ function createButtonClickHandler()
 
     fileStr += tempMap;
 
-    fileStr +=
-        '[Wonders]\r\n' +
-        '[End]\r\n';
+    fileStr += '[Wonders]\r\n'
+    for (var i = 0; i < wonder_objects.length; i++)
+    {
+        var objPtr = wonder_objects[i];
+        fileStr += 'w=' + objPtr.wonder.civilization + ',0,' + objPtr.coords.xy + ',0\r\n';
+    }
+        
+    fileStr += '[End]\r\n\r\n';
 
-    console.log(fileStr);
+    //console.log(fileStr);
 
     var base64Str = window.btoa(fileStr);
 
